@@ -1,5 +1,0 @@
-{
-  "name": "Logistics PR Tracker",
-  "description": "An application for a receiving superintendent to upload and track the status of Purchase Requisitions (PRs). Upload PRs from Excel sheets, update received quantities, and move completed PRs to an archive.",
-  "requestFramePermissions": []
-}

@@ -1,5 +1,3 @@
-
-
 export enum PRStatus {
   InProgress = 'In Progress',
   Completed = 'Completed',
@@ -45,20 +43,37 @@ export interface UserSession {
   sessionId: string;
   userName: string;
   role: UserRole;
-  lastSeen: number; // timestamp
+  lastSeen: number;
+  deviceId?: string;
+  deviceName?: string;
 }
 
 export enum SuggestionStatus {
-    Pending = 'Pending',
-    Reviewed = 'Reviewed',
-    Done = 'Done',
+  Pending = 'Pending',
+  Reviewed = 'Reviewed',
+  Done = 'Done',
 }
 
 export interface SuggestionLogEntry {
-    id: string;
-    userName: string;
-    note: string;
-    timestamp: number;
-    status: SuggestionStatus;
-    adminComments: string;
+  id: string;
+  userName: string;
+  note: string;
+  timestamp: number;
+  status: SuggestionStatus;
+  adminComments: string;
+}
+
+// API Response Types
+export interface LoginResponse {
+  success: boolean;
+  sessionId: string;
+  role: UserRole;
+  message?: string;
+}
+
+export interface ApiResponse<T = any> {
+  success: boolean;
+  data?: T;
+  message?: string;
+  error?: string;
 }
